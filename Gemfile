@@ -9,6 +9,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "cssbundling-rails"
 gem "jbuilder"
+gem "capybara"
 
 # gem "redis", ">= 4.0.1"
 # gem "kredis"
