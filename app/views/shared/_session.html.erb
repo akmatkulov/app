@@ -1,0 +1,30 @@
+<div class="container-signup">
+<%= form_for(:session, url: login_path) do |f| %>
+     <div class="mx-auto" style="max-width: 540px;">
+      <h2 style="text-align:center;" class="mb-3 display-5">Instagram</h2>
+      <hr>
+      <div class="row g-3">
+        <div class="col-md-6">
+            <%= image_tag('insta.svg', size: '270x270') %>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <%= f.label :email, class: "form-label" %><br />
+            <%= f.email_field :email, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password, class: "form-label" %>
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
+          
+          <div class="actions mb-3">
+            <%= f.submit "Войти", class: "btn btn-primary" %>
+          </div>
+        </div>
+        <hr>
+        <span style="text-align:center;"> Новый пользователь?
+          <%= link_to "Зарегестрироватся", signup_path %>  </span>
+      </div>
+    </div>
+  <% end %>
+</div>

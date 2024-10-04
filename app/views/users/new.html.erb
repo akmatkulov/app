@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-signup">
   <%= form_with model: @user do |f| %>
      <div class="mx-auto" style="max-width: 540px;">
       <h2 style="text-align:center;" class="mb-3 display-5">Instagram</h2>
@@ -35,7 +35,7 @@
         </div>
         <hr>
         <span style="text-align:center;">У вас есть аккаунт?
-          <%= link_to "Войти", '#' %>  </span>
+          <%= link_to "Войти", root_path %>  </span>
       </div>
     </div>
 <% end %>

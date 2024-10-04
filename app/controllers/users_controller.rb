@@ -7,8 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Instagram!"
-      redirect_to @user
+      redirect_to @user, flash: { success: "Welcome to the Instagram!" }
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,5 +19,11 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:user_name, :name, :email, :password, :password_confirmation)
+    end
+
+    def logged_in_user
+      unless logged_in?
+        redirect_to login_path, flash: { danger: "Please log in." }
+      end
     end
 end
