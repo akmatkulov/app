@@ -1,0 +1,40 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary mt-3" style="width: 180px;">
+        <%= link_to 'Instagram', root_path, class: "nav-link link-body-emphasis fs-4 text-center" %>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li>
+         <a href="#" class="nav-link link-body-emphasis">
+          <i class="bi bi-globe"></i>
+          Explore
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link link-body-emphasis">
+          <i class="bi bi-bell"></i>
+          Notification
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link link-body-emphasis">
+          <i class="bi bi-file-earmark-plus"></i>
+          New Post
+        </a>
+      </li>
+      <li>
+        <%= link_to user_path(current_user), class: "nav-link link-body-emphasis" do %>
+          <i class="bi bi-person-lines-fill"></i>
+          Account
+        <% end %>
+      </li>
+  
+    <hr>
+    <li>
+        <%= link_to logout_path, data: { "turbo-method": :delete }, class: "nav-link link-body-emphasis" do %> <i class="bi bi-door-open"></i> Logout
+        <% end %>
+    </li>
+</ul>
+  </div>
+
+
+        

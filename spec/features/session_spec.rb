@@ -19,4 +19,16 @@ RSpec.feature "Sessions", type: :feature do
     click_button 'Войти'
     expect(page).to have_content('You are logged in')
   end
+
+  scenario "logout user after login" do
+    @user = user(:marko)
+    visit root_path
+    fill_in "session_email", with: @user.email
+    fill_in "session_password", with: "supersecret"
+    click_button 'Войти'
+    expect(page).to have_content('You are logged in')
+    click_link('Logout')
+    expect(page).to have_button("Войти")
+    expect(page).not_to have_link("Logout")
+  end
 end
