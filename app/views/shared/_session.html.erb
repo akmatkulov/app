@@ -16,6 +16,13 @@
             <%= f.label :password, class: "form-label" %>
             <%= f.password_field :password, class: "form-control" %>
           </div>
+
+          <div class="mb-3">
+            <%= f.label :remember_me, class: "form-check-label" do %>
+            <%= f.check_box :remember_me %>
+              <span>Запомнить меня</span>
+            <% end %>
+          </div>
           
           <div class="actions mb-3">
             <%= f.submit "Войти", class: "btn btn-primary" %>
@@ -28,3 +35,4 @@
     </div>
   <% end %>
 </div>
+
