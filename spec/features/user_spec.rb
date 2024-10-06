@@ -8,7 +8,7 @@ RSpec.feature "Users", type: :feature do
     fill_in "user_email", with: "mike@albuqerke.com"
     fill_in "user_password", with: "foobar"
     fill_in "user_password_confirmation", with: "foobar"
-    click_button 'Зарегистрироваться'
+    click_button 'Create User'
     expect(page).to have_content('Welcome to the Instagram!')
   end
 end

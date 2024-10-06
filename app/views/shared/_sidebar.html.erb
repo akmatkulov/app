@@ -1,36 +1,52 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary mt-3" style="width: 180px;">
-        <%= link_to 'Instagram', root_path, class: "nav-link link-body-emphasis fs-4 text-center" %>
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary mt-3" style="width: 200px;">
+        <%= link_to 'Instagram', root_path, class: "nav-link link-body-emphasis text-center fs-3"%>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li>
-         <a href="#" class="nav-link link-body-emphasis">
+         <a href="#" class="nav-link link-body-emphasis fs-5">
           <i class="bi bi-globe"></i>
           Explore
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-body-emphasis">
+        <a href="#" class="nav-link link-body-emphasis fs-5">
           <i class="bi bi-bell"></i>
           Notification
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-body-emphasis">
+        <a href="#" class="nav-link link-body-emphasis fs-5">
           <i class="bi bi-file-earmark-plus"></i>
           New Post
         </a>
       </li>
+
       <li>
-        <%= link_to user_path(current_user), class: "nav-link link-body-emphasis" do %>
+        <%= link_to users_path, class: "nav-link link-body-emphasis fs-5" do %>
           <i class="bi bi-person-lines-fill"></i>
-          Account
+          All users
         <% end %>
+      </li>
+      <li>
+        <div class="dropdown">
+          <button type="button" class="nav-link link-body-emphasis btn dropdown-toggle fs-5" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            Account
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to 'Settings', edit_user_path(current_user), class: "dropdown-item" %>
+            </li>
+            <%= link_to 'User page', user_path(current_user), class: "dropdown-item" %>
+            <li>
+            </li>
+          </ul>
+        </div>
       </li>
   
     <hr>
     <li>
-        <%= link_to logout_path, data: { "turbo-method": :delete }, class: "nav-link link-body-emphasis" do %> <i class="bi bi-door-open"></i> Logout
+        <%= link_to logout_path, data: { "turbo-method": :delete }, class: "nav-link link-body-emphasis fs-5" do %> <i class="bi bi-door-open"></i> Logout
         <% end %>
     </li>
 </ul>

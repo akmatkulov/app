@@ -21,6 +21,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem "ffaker"
   gem "rspec-rails", "~> 7.0", ">= 7.0.1"
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false

@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates_length_of :name, maximum: 50
   validates_presence_of :name, :user_name, :email
   validates_uniqueness_of :email, :user_name, case_sensitive: true
-  validates_length_of :password, { in: 6..20 }
+  validates :password, length: { in: 6..20 }, allow_blank: true
   has_secure_password
 
   # Return digest for string

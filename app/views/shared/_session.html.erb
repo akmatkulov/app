@@ -20,17 +20,17 @@
           <div class="mb-3">
             <%= f.label :remember_me, class: "form-check-label" do %>
             <%= f.check_box :remember_me %>
-              <span>Запомнить меня</span>
+              <span>Remember me</span>
             <% end %>
           </div>
           
           <div class="actions mb-3">
-            <%= f.submit "Войти", class: "btn btn-primary" %>
+            <%= f.submit 'Log in',class: "btn btn-primary" %>
           </div>
         </div>
         <hr>
-        <span style="text-align:center;"> Новый пользователь?
-          <%= link_to "Зарегестрироватся", signup_path %>  </span>
+        <span style="text-align:center;"> New user?
+          <%= link_to "Sign up.", signup_path %>  </span>
       </div>
     </div>
   <% end %>

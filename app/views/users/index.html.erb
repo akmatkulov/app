@@ -1,0 +1,9 @@
+<h1 class="mt-3 mb-3">All Users</h1>
+<% @users.each do |user| %>   
+    <h2>
+        <span class="badge rounded-pill text-bg-secondary"><%= gravatar_for user %></span>
+        <%= link_to user_path(user), class: "link-body-emphasis" do %>
+            <%= user.user_name %>
+        <% end %>
+    </h2>
+<% end %>
