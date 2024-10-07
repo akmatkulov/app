@@ -18,8 +18,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in(@user)
-      redirect_to @user, flash: { success: "Welcome to the Instagram!" }
+      @user.send_activation_email
+      redirect_to root_url, flash: { info: "Please check your email to activate your account." }
     else
       render :new, status: :unprocessable_entity
     end

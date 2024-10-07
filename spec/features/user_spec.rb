@@ -9,6 +9,6 @@ RSpec.feature "Users", type: :feature do
     fill_in "user_password", with: "foobar"
     fill_in "user_password_confirmation", with: "foobar"
     click_button 'Create User'
-    expect(page).to have_content('Welcome to the Instagram!')
+    expect(page).to have_content('Please check your email to activate your account.')
   end
 end

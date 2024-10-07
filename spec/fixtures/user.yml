@@ -2,5 +2,7 @@ marko:
   user_name: marko114
   name: Marko Nunberg
   email: marko@gmail.com
-  admin: true   
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>  
   password_digest: <%= BCrypt::Password.create('supersecret') %>
