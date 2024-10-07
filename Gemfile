@@ -10,7 +10,7 @@ gem "stimulus-rails"
 gem "cssbundling-rails"
 gem "jbuilder"
 gem "capybara"
-
+gem "pagy", "~> 9.1" # omit patch digit
 # gem "redis", ">= 4.0.1"
 # gem "kredis"
 

@@ -1,5 +1,6 @@
 marko:
   user_name: marko114
   name: Marko Nunberg
-  email: marko@gmail.com    
+  email: marko@gmail.com
+  admin: true   
   password_digest: <%= BCrypt::Password.create('supersecret') %>

@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update ]
-  before_action :logged_in_user, only: %i[ edit update index ]
+  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :logged_in_user, only: %i[ edit update index destroy ]
   before_action :correct_user, only: %i[ edit update ]
+  before_action :admin_user, only: :destroy
 
   def show; end
   def edit; end
 
   def index
-    @users = User.all
+    @pagy, @users = pagy(User.all)
   end
   def new
     redirect_to root_path if current_user.present?
@@ -32,6 +33,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    flash[:success] = "User deleted"
+    redirect_to users_path, status: :see_other
+  end
+
   private
     def set_user
       @user = User.find(params[:id])
@@ -52,5 +59,9 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url, status: :see_other) unless current_user?(@user)
+    end
+
+    def admin_user
+      redirect_to(root_url, status: :see_other) unless current_user.admin?
     end
 end
